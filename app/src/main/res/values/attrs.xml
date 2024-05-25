@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircularInitialsImageView">
+        <attr name="initialsBackgroundColor" format="color" />
+        <attr name="initialsTextColor" format="color" />
+        <attr name="placeholder" format="integer" />
+        <attr name="url" format="string" />
+        <attr name="initials" format="string" />
+    </declare-styleable>
+</resources>

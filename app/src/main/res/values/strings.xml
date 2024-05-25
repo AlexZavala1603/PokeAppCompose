@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PokemonsApp</string>
+
+    <string name="bad_request">Solicitud incorrecta</string>
+    <string name="network_error">Error de red. Verifique su conexión.</string>
+    <string name="empty_response">No hay más información por el momento.</string>
+    <string name="unknow_error">Por favor intente más tarde.</string>
+    <string name="title_activity_pokemons">Pokemons</string>
+    <string name="title_activity_pokemon_details">Detalles del Pokemon</string>
+
+    <string name="title_home">PokeApp</string>
+    <string name="subtitle_home">¡Todos los pokemons en una sola app gracias a la PokeApi!</string>
+
+</resources>
