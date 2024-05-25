@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -28,7 +29,9 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.pokemonsapp.R
@@ -86,9 +89,13 @@ fun MainScreen(viewModel: MainViewModel, navigateToPokemonDetails: (Int) -> Unit
         when (uiState) {
             is UiModel.Loading -> LoadingScreen()
             is UiModel.Error -> ErrorScreen(errorEntity = (uiState as UiModel.Error).errorEntity)
-            is UiModel.LoadPokemonList -> PokemonsScreen(uiState as UiModel.LoadPokemonList, scrollState) {
+            is UiModel.LoadPokemonList -> PokemonsScreen(
+                uiState as UiModel.LoadPokemonList,
+                scrollState
+            ) {
                 navigateToPokemonDetails(it)
             }
+
             null -> {}
         }
     }
@@ -110,15 +117,18 @@ fun PokemonsScreen(
     ) {
 
         Spacer(modifier = Modifier.height(32.dp))
-        Text(
-            text = stringResource(id = R.string.title_home),
-            modifier = Modifier.padding(8.dp),
-            style = MaterialTheme.typography.headlineLarge,
-            color = Color.White
+
+        Image(
+            painterResource(R.drawable.pokeapi_256),
+            contentDescription = null,
+            contentScale = ContentScale.FillWidth,
+            modifier = Modifier.padding(8.dp)
         )
+
         Spacer(modifier = Modifier.height(8.dp))
+
         Text(
-            text = stringResource(id = R.string.subtitle_home) ,
+            text = stringResource(id = R.string.subtitle_home),
             modifier = Modifier.padding(8.dp),
             style = MaterialTheme.typography.titleMedium,
             color = Color.White

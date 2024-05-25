@@ -32,6 +32,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -107,15 +108,15 @@ fun PokemonDetailedScreen(
 fun PokemonDetailScreen(pokemon: PokemonDetail, onBackClicked: () -> Unit) {
     Column(
         modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
+            .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(bottom = 16.dp)
+                .padding(bottom = 24.dp)
+                .background(colorResource(id = R.color.pokemon_red))
         ) {
             IconButton(
                 onClick = onBackClicked,
@@ -126,12 +127,12 @@ fun PokemonDetailScreen(pokemon: PokemonDetail, onBackClicked: () -> Unit) {
                 Icon(
                     Icons.Default.ArrowBack,
                     contentDescription = "Back",
-                    tint = Color.Black
+                    tint = Color.White
                 )
             }
             Text(
                 text = stringResource(id = R.string.title_activity_pokemon_details),
-                style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.Bold, color = Color.Black),
+                style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.Bold, color = Color.White),
                 modifier = Modifier.weight(1f)
             )
         }
