@@ -15,4 +15,4 @@ PokemonsApp es una aplicación Android diseñada para ayudarte a explorar y obte
 4. Compila y ejecuta la aplicación.
 
 # Ejecución directa
-En el apartado de releases, puedes encontrar una APK compilada con la ultima versión de la app.
+En el apartado de [releases](https://github.com/AlexZavala1603/PokeAppCompose/releases/tag/production), puedes encontrar una APK compilada con la ultima versión de la app.
